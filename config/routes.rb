@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # ユーザー
+  post '/user_info', to: 'users/user_info#index'
+  post '/user_new', to: 'users/user_new#index'
+  post '/user_edit', to: 'users/user_edit#index'
 end
