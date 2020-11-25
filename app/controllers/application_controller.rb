@@ -4,6 +4,6 @@ class ApplicationController < ActionController::API
   private
 
   def name_error(e)
-    render json: ["NameError: #{e}"]
+    render json: {err_msg: ["NameError: #{e}"]}
   end
 end
