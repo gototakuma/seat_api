@@ -1,8 +1,14 @@
 class Users::UserInfoController < ApplicationController
+  before_action :jwt, if: :jwt_start?
+
   def index
-    users = User.all
-    users = users.where('name like ?', "%#{params[:name]}%") if params[:name].present?
-    users = users.where(id: params[:id]) if params[:id].present?
+    if @jwt_user
+      users = User.where(id: @jwt_user[:uid])
+    else
+      users = User.all
+      users = users.where('name like ?', "%#{params[:name]}%") if params[:name].present?
+      users = users.where(id: params[:id]) if params[:id].present?
+    end
 
     if users.present?
       render json: {users: users}

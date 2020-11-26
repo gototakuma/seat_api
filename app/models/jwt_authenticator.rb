@@ -3,13 +3,10 @@ module JwtAuthenticator
 
   SECRET_KEY_BASE = ENV['SECRET_KEY']
 
-  def jwt_authenticate
+  def jwt
     raise UnableAuthorizationError.new("認証情報が不足しています。") if request.headers['Authorization'].blank?
     encoded_token = request.headers['Authorization'].split('Token ').last
-    payload = decode(encoded_token)
-    @current_user = User.find_by(id: payload[:uid])
-    raise UnableAuthorizationError.new("認証できません。") if @current_user.blank?
-    @current_user
+    @jwt_user = decode(encoded_token).symbolize_keys
   end
 
   # 暗号化処理
