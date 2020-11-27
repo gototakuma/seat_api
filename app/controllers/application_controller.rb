@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
 
   private
 
-  def jwt_start?
+  def jwt_need?
     return params[:jwt]
   end
 

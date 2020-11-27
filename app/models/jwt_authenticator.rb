@@ -6,13 +6,13 @@ module JwtAuthenticator
   def jwt
     raise UnableAuthorizationError.new("認証情報が不足しています。") if request.headers['Authorization'].blank?
     encoded_token = request.headers['Authorization'].split('Token ').last
-    @jwt_user = decode(encoded_token).symbolize_keys
+    @jwt = decode(encoded_token).symbolize_keys
   end
 
   # 暗号化処理
-  def encode(user_id)
+  def encode(id)
     expires_in = 12.month.from_now.to_i
-    preload = { uid: user_id, exp: expires_in }
+    preload = { id: id, exp: expires_in }
     JWT.encode(preload, SECRET_KEY_BASE, 'HS256')
   end
 

@@ -1,9 +1,9 @@
 class Users::UserInfoController < ApplicationController
-  before_action :jwt, if: :jwt_start?
+  before_action :jwt, if: :jwt_need?
 
   def index
-    if @jwt_user
-      users = User.where(id: @jwt_user[:uid])
+    if @jwt
+      users = User.where(id: @jwt[:id])
     else
       users = User.all
       users = users.where('name like ?', "%#{params[:name]}%") if params[:name].present?
