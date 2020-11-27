@@ -6,3 +6,11 @@
   )
 end
 puts 'ユーザー作成！'
+
+Shop.create!(
+  name: 'コワーキングスペース品川店',
+  login_id: 'shop1',
+  password: 'password',
+  address: '東京都品川区大井'
+)
+puts '店舗作成！'

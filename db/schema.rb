@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_031043) do
+ActiveRecord::Schema.define(version: 2020_11_26_154950) do
+
+  create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false, comment: "店舗名"
+    t.string "login_id", null: false, comment: "ログインID"
+    t.string "password_digest", null: false, comment: "パスワード"
+    t.string "address", null: false, comment: "住所"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false, comment: "名前"
