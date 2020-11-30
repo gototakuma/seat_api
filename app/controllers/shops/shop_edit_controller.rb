@@ -1,5 +1,5 @@
 class Shops::ShopEditController < ApplicationController
-  before_action :jwt, if: :jwt_need?
+  before_action :jwt
 
   def index
 

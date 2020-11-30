@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   post '/shop_info', to: 'shops/shop_info#index'
   post '/shop_new', to: 'shops/shop_new#index'
   post '/shop_edit', to: 'shops/shop_edit#index'
+
+  #座席
+  post '/seat_info', to: 'seats/seat_info#index'
+  post '/seat_new', to: 'seats/seat_new#index'
+  post '/seat_edit', to: 'seats/seat_edit#index'
 end
