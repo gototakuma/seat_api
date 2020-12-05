@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   post '/seat_info', to: 'seats/seat_info#index'
   post '/seat_new', to: 'seats/seat_new#index'
   post '/seat_edit', to: 'seats/seat_edit#index'
+
+  # 利用時間
+  post '/utilization_time_new', to: 'utilization_times/utilization_time_new#index'
+  post '/utilization_list', to: 'utilization_times/utilization_list#index'
+  post '/utilization_history', to: 'utilization_times/utilization_history#index'
 end

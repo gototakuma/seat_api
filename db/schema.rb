@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_141313) do
+ActiveRecord::Schema.define(version: 2020_12_01_152051) do
 
   create_table "seats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "number", null: false
-    t.string "seat_type", null: false
+    t.integer "number", null: false, comment: "座席番号"
+    t.string "seat_type", null: false, comment: "座席タイプ"
+    t.boolean "is_use", default: false, comment: "使用可・使用中"
     t.integer "shop_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,6 +34,15 @@ ActiveRecord::Schema.define(version: 2020_11_28_141313) do
     t.string "name", null: false, comment: "名前"
     t.string "login_id", null: false, comment: "ログインID"
     t.string "password_digest", null: false, comment: "パスワード"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "utilization_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "started_at", comment: "利用開始時間"
+    t.datetime "finished_at", comment: "利用終了時間"
+    t.integer "user_id"
+    t.integer "seat_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
