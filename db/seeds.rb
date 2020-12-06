@@ -31,3 +31,10 @@ Seat.create!(
   shop_id: 1
 )
 puts '座席作成！'
+
+Message.create!(
+  title: 'テストでお知らせ',
+  description: 'テストメッセージです。',
+  shop_id: 1
+)
+puts 'お知らせメッセージ作成！'

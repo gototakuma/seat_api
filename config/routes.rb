@@ -21,4 +21,9 @@ Rails.application.routes.draw do
   post '/utilization_time_new', to: 'utilization_times/utilization_time_new#index'
   post '/utilization_list', to: 'utilization_times/utilization_list#index'
   post '/utilization_history', to: 'utilization_times/utilization_history#index'
+
+  # お知らせ
+  post '/message_new', to: 'messages/message_new#index'
+  post '/message_info', to: 'messages/message_info#index'
+  post '/message_edit', to: 'messages/message_edit#index'
 end
