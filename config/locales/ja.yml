@@ -1,4 +1,33 @@
 ja:
+  activerecord:
+    models:
+      message: お知らせ
+      seat: 座席
+      shop: 店舗
+      user: 顧客
+      utilization_time: 利用時間
+    attributes:
+      message:
+        title: タイトル
+        description: 本文
+        is_sent: 配信フラグ
+      seat:
+        number: 座席番号
+        seat_type: 座席タイプ
+        is_use: 利用中フラグ
+      shop:
+        name: 店舗名
+        login_id: ログインID
+        password_digest: パスワード
+        adderss: 店舗住所
+      user:
+        name: 名前
+        login_id: ログインID
+        password_digest: パスワード
+      utilization_time:
+        started_at: 利用開始時間
+        finished_at: 利用終了時間
+
   time:
     formats:
       default: '%Y/%m/%d'

@@ -11,7 +11,7 @@ class Users::UserNewController < ApplicationController
       login_id: params[:login_id],
       password: params[:password]
     )
-    user.save
+    user.save!
 
     render json: {fl_msg: '登録完了しました。'}
   end
