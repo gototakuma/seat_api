@@ -2,7 +2,7 @@
   User.create!(
     name: "test#{n+1}",
     login_id: "sample#{n+1}",
-    password: 'password'
+    password_digest: 'password'
   )
 end
 puts 'ユーザー作成！'
@@ -10,7 +10,7 @@ puts 'ユーザー作成！'
 Shop.create!(
   name: 'コワーキングスペース品川店',
   login_id: 'shop1',
-  password: 'password',
+  password_digest: 'password',
   address: '東京都品川区大井'
 )
 puts '店舗作成！'
